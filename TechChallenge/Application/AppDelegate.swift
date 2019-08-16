@@ -13,6 +13,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        window = UIWindow()
+        window?.frame = UIScreen.main.bounds
+        let tabBarVC = TabBarController()
+        tabBarVC.selectedIndex = 0
+        window?.rootViewController = tabBarVC
+        window?.makeKeyAndVisible()
+
         return true
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TableViewController
 //  TechChallenge
 //
 //  Created by Zeeshan Mian on 4/24/18.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class TableViewController: UIViewController {
     private let transactions = Transaction.getAll()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .blue
     }
 }
