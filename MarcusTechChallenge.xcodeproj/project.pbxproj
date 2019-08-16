@@ -23,6 +23,9 @@
 		7F1AC21C7A775224D2F73637 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A494556C00007883D54243 /* Pods_UITests.framework */; };
 		D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB6C2306FE51005E8196 /* TabBarController.swift */; };
 		D656BB7323070045005E8196 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7223070045005E8196 /* CollectionViewController.swift */; };
+		D656BB7523073EF8005E8196 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7423073EF8005E8196 /* CollectionViewDataSource.swift */; };
+		D656BB7823074041005E8196 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7723074041005E8196 /* TransactionViewModel.swift */; };
+		D656BB7A230743D3005E8196 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		C9A494556C00007883D54243 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D656BB6C2306FE51005E8196 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = TechChallenge/ViewControllers/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		D656BB7223070045005E8196 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D656BB7423073EF8005E8196 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		D656BB7723074041005E8196 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
+		D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6F031580A01383CA9B45AF2 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9EAAA56FC0623F94AC6FB62 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -178,6 +184,9 @@
 				D656BB6C2306FE51005E8196 /* TabBarController.swift */,
 				6889B80D208FDA380097A8DC /* TableViewController.swift */,
 				D656BB7223070045005E8196 /* CollectionViewController.swift */,
+				D656BB7723074041005E8196 /* TransactionViewModel.swift */,
+				D656BB7B230743D8005E8196 /* Cell */,
+				D656BB7623073EFE005E8196 /* DataSource */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -208,6 +217,22 @@
 				6889B818208FDA380097A8DC /* Transaction.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D656BB7623073EFE005E8196 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				D656BB7423073EF8005E8196 /* CollectionViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		D656BB7B230743D8005E8196 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FEB095B757FDB97599DAD9F5 /* Pods */ = {
@@ -417,11 +442,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6889B81A208FDA380097A8DC /* AppDelegate.swift in Sources */,
+				D656BB7A230743D3005E8196 /* CustomCollectionViewCell.swift in Sources */,
 				6889B819208FDA380097A8DC /* TableViewController.swift in Sources */,
 				6889B81F208FDA380097A8DC /* Transaction.swift in Sources */,
 				D656BB7323070045005E8196 /* CollectionViewController.swift in Sources */,
 				D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */,
 				686619DA20923C7100934EA0 /* Data.swift in Sources */,
+				D656BB7523073EF8005E8196 /* CollectionViewDataSource.swift in Sources */,
+				D656BB7823074041005E8196 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

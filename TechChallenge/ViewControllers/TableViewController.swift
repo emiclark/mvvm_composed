@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class TableViewController: UIViewController {
-    private let transactions = Transaction.getAll()
+final class TableViewController: UITableViewController {
+//    private let transactions = Transaction.getAll()
 
     override func viewDidLoad() {
         super.viewDidLoad()
