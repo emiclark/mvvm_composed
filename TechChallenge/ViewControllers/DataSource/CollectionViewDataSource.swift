@@ -9,16 +9,30 @@
 import Foundation
 import UIKit
 
-class CollectionViewDataSource: UICollectionViewDataSource {
+class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewDataSource {
 
-    let viewModel = TransactionViewModel(transactions: <#T##[Transaction]#>)
+    let reuseIdentifier = "cellId"
+    let viewModel = TransactionViewModel()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
+        return viewModel.transactions.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
+        let transaction = viewModel.transactions[indexPath.row]
+        cell.configure(with: transaction)
+        return cell
+    }
+
+}
+
+extension CollectionViewDataSource: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let transaction = viewModel.transactions[indexPath.row]
+
     }
 
 }

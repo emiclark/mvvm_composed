@@ -18,10 +18,11 @@ class TabBarController: UITabBarController {
     func setupTabBar() {
         // vc 1
         let vc1 = UINavigationController(rootViewController: TableViewController())
-        vc1.tabBarItem = UITabBarItem(title: "TableView 1", image: nil, tag: 0)
+        vc1.tabBarItem = UITabBarItem(title: "TableView", image: nil, tag: 0)
 
         // vc 2
-        let vc2 = UINavigationController(rootViewController: CollectionViewController())
+        let cv = CollectionViewController()
+        let vc2 = UINavigationController(rootViewController: cv)
         vc2.tabBarItem = UITabBarItem(title: "CollectionView", image: nil, tag: 1)
         viewControllers = [vc1, vc2]
     }

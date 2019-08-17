@@ -17,10 +17,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.frame = UIScreen.main.bounds
         let tabBarVC = TabBarController()
-        tabBarVC.selectedIndex = 0
+        tabBarVC.selectedIndex = 1
         window?.rootViewController = tabBarVC
         window?.makeKeyAndVisible()
-
         return true
     }
 }

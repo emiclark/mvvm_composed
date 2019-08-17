@@ -9,5 +9,5 @@
 import Foundation
 
 class TransactionViewModel: NSObject {
-    private let transactions = Transaction.getAll()
+    let transactions = Transaction.getAll()
 }
