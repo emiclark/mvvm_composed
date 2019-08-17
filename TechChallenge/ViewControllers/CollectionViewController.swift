@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SnapKit
+import SDWebImage
 
 class CollectionViewController: UIViewController {
 
@@ -15,7 +15,6 @@ class CollectionViewController: UIViewController {
     let reuseIdentifier = "cellId"
     let viewModel = TransactionViewModel()
     let itemSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 150.0)
-
 
     lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -26,13 +25,14 @@ class CollectionViewController: UIViewController {
         cv.alwaysBounceVertical = true
         cv.showsVerticalScrollIndicator = true
         cv.backgroundColor = .white
-
         return cv
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
+        collectionview.delegate = datasource
+        collectionview.dataSource =  datasource
+        view.backgroundColor = .white
         self.navigationItem.title = "All transactions"
         collectionview.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: datasource.reuseIdentifier)
         setupViews()
@@ -43,29 +43,5 @@ class CollectionViewController: UIViewController {
         collectionview.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        collectionview.delegate = datasource
-        collectionview.dataSource =  datasource
-    }
-}
-
-extension CollectionViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.transactions.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
-        let transaction = viewModel.transactions[indexPath.row]
-        cell.configure(with: transaction)
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return itemSize
-    }
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
     }
 }
