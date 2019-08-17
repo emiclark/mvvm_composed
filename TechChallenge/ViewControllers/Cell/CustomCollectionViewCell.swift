@@ -129,7 +129,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         }
 
         separator.snp.makeConstraints { make in
-            make.left.right.bottom.equalTo(contentView)
+            make.left.right.bottom.equalToSuperview()
             make.height.equalTo(1)
         }
     }

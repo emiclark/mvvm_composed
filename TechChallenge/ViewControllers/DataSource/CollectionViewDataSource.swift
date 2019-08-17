@@ -22,12 +22,16 @@ class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
         let transaction = viewModel.transactions[indexPath.row]
-
         cell.configure(with: transaction)
 
         guard let urlString = transaction.logoUrl,
             let url = URL(string: urlString) else { return cell }
         cell.logoImageView.sd_setImage(with: url)
+
+        // FIXME:- set recurring switch when tapped
+        cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
+
+        cell.configure(with: transaction)
 
         return cell
     }
@@ -38,6 +42,15 @@ class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewData
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+
+    @objc private func switchChanged(sender: UISwitch) {
+        switch sender.isOn {
+        case true:
+            viewModel.transactions[sender.tag].isRecurring = true
+        case false:
+            viewModel.transactions[sender.tag].isRecurring = false
+        }
     }
 }
 
