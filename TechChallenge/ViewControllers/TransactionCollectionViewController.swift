@@ -1,5 +1,5 @@
 //
-//  CollectionViewController.swift
+//  TransactionCollectionViewController
 //  TechChallenge
 //
 //  Created by Emiko Clark on 8/16/19.
@@ -9,21 +9,21 @@
 import UIKit
 import SnapKit
 
-class CollectionViewController: UIViewController {
+final class TransactionCollectionViewController: UIViewController {
 
-    let datasource = CollectionViewDataSource()
-    let reuseIdentifier = "cellId"
-    let viewModel = TransactionViewModel()
-    let itemSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 150.0)
+    private let datasource = TransactionCollectionViewDataSource()
+    private let reuseIdentifier = "cellId"
+    private let viewModel = TransactionViewModel()
 
     lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = itemSize
-        let cv = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.isScrollEnabled = true
         cv.alwaysBounceVertical = true
         cv.showsVerticalScrollIndicator = true
-        cv.backgroundColor = .purple
+        cv.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: datasource.reuseIdentifier)
+        cv.backgroundColor = .white
         return cv
     }()
 
@@ -33,11 +33,11 @@ class CollectionViewController: UIViewController {
         collectionview.dataSource =  datasource
         view.backgroundColor = .yellow
         self.navigationItem.title = "All transactions"
-        collectionview.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: datasource.reuseIdentifier)
+        datasource.navigationCtlr = self.navigationController
         setupViews()
     }
 
-    func setupViews() {
+    private func setupViews() {
         view.addSubview(collectionview)
         collectionview.snp.makeConstraints { make in
             make.edges.equalToSuperview()

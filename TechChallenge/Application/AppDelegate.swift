@@ -14,11 +14,13 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        window = UIWindow()
-        window?.frame = UIScreen.main.bounds
+        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.frame = UIScreen.main.bounds
         let tabBarVC = TabBarController()
         tabBarVC.selectedIndex = 1
         window?.rootViewController = tabBarVC
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
+        UINavigationBar.appearance().barTintColor = .white
         window?.makeKeyAndVisible()
         return true
     }

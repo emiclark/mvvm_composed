@@ -1,5 +1,5 @@
 //
-//  CollectionViewDataSource.swift
+//  TransactionCollectionViewDataSource
 //  TechChallenge
 //
 //  Created by Emiko Clark on 8/16/19.
@@ -9,12 +9,11 @@
 import UIKit
 import SDWebImage
 
-class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+final class TransactionCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     let reuseIdentifier = "cellId"
-    let viewModel = TransactionViewModel()
-    let itemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
-
+    var navigationCtlr: UINavigationController? = nil
+    private let viewModel = TransactionViewModel()
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.transactions.count
@@ -37,7 +36,8 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return itemSize
+
+        return CGSize(width: collectionView.frame.width, height: 150)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -45,7 +45,9 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did click for detail")
+        let transaction = viewModel.transactions[indexPath.row]
+        let detailVC = DetailViewController(transaction: transaction)
+        navigationCtlr?.pushViewController(detailVC, animated: true)
     }
 
     @objc private func switchChanged(sender: UISwitch) {
