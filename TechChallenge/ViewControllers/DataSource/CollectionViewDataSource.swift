@@ -6,13 +6,14 @@
 //  Copyright © 2019 Marcus. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import SDWebImage
 
-class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewDataSource {
+class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     let reuseIdentifier = "cellId"
     let viewModel = TransactionViewModel()
+    let itemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,7 +29,6 @@ class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewData
             let url = URL(string: urlString) else { return cell }
         cell.logoImageView.sd_setImage(with: url)
 
-        // FIXME:- set recurring switch when tapped
         cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
 
         cell.configure(with: transaction)
@@ -44,6 +44,10 @@ class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewData
         return 1
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("did click for detail")
+    }
+
     @objc private func switchChanged(sender: UISwitch) {
         switch sender.isOn {
         case true:
@@ -51,11 +55,5 @@ class CollectionViewDataSource: UICollectionViewFlowLayout, UICollectionViewData
         case false:
             viewModel.transactions[sender.tag].isRecurring = false
         }
-    }
-}
-
-extension CollectionViewDataSource: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }

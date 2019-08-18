@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import SnapKit
 
 class CollectionViewController: UIViewController {
 
@@ -18,13 +18,12 @@ class CollectionViewController: UIViewController {
 
     lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.estimatedItemSize = CGSize(width: UIScreen.main.bounds.width, height: 150)
-        layout.itemSize = layout.estimatedItemSize
+        layout.estimatedItemSize = itemSize
         let cv = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
         cv.isScrollEnabled = true
         cv.alwaysBounceVertical = true
         cv.showsVerticalScrollIndicator = true
-        cv.backgroundColor = .white
+        cv.backgroundColor = .purple
         return cv
     }()
 
@@ -32,7 +31,7 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         collectionview.delegate = datasource
         collectionview.dataSource =  datasource
-        view.backgroundColor = .white
+        view.backgroundColor = .yellow
         self.navigationItem.title = "All transactions"
         collectionview.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: datasource.reuseIdentifier)
         setupViews()
