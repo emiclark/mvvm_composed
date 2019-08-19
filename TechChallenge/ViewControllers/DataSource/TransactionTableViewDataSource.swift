@@ -29,6 +29,9 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let transaction =  viewModel.transactions[indexPath.row]
+
+        //FIXME:- redraw single cell if recurring switch is switched on the detailVC
+        viewModel.indexPathRow?.row = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseidentifier, for: indexPath) as! CustomTableViewCell
 
         cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)

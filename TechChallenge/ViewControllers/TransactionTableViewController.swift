@@ -24,6 +24,12 @@ final class TransactionTableViewController: UIViewController {
         return tv
     }()
 
+    override func viewWillAppear(_ animated: Bool) {
+        guard let indexPathRow = viewModel.indexPathRow else { return }
+        let indexPosition = IndexPath(row: indexPathRow.row, section: 0)
+        tableView.reloadRows(at: [indexPathRow], with: .automatic)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = datasource

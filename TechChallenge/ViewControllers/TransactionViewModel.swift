@@ -13,5 +13,8 @@ final class TransactionViewModel: NSObject {
 
     var transactionsCount: Int {
         return transactions.count
-    }   
+    }
+
+    var indexPathRow: IndexPath?
+
 }

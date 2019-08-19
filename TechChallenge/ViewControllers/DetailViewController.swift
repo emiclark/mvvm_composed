@@ -52,6 +52,36 @@ final class DetailViewController: UIViewController {
         return stackview
     }()
 
+    // recurring
+    private lazy var nonRecurringLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .darkGray
+        label.font = font
+        label.text = "Non-Recurring"
+        return label
+    }()
+
+    var recurringSwitch: UISwitch = {
+        let `switch` = UISwitch()
+        `switch`.transform = CGAffineTransform(scaleX: 0.60, y: 0.60)
+        return `switch`
+    }()
+
+    private lazy var isRecurringLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .darkGray
+        label.font = font
+        label.text = "Recurring"
+        return label
+    }()
+
+    private lazy var recurringStackview: UIStackView = {
+        let stackview = UIStackView(arrangedSubviews: [nonRecurringLabel, recurringSwitch, isRecurringLabel])
+        stackview.axis = .horizontal
+        stackview.distribution = .fill
+        return stackview
+    }()
+
     // Initializer
     init(transaction: Transaction) {
         self.transaction = transaction
@@ -69,6 +99,7 @@ final class DetailViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.backgroundColor = .white
         view.backgroundColor = .white
+        recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
         setupViews(for: transaction)
     }
 
@@ -83,6 +114,10 @@ final class DetailViewController: UIViewController {
         view.addSubview(logoImageView)
         view.addSubview(stackview)
 
+        if transaction.isRecurring == false {
+            stackview.addArrangedSubview(recurringStackview)
+        }
+
         // add constraints
         logoImageView.snp.makeConstraints { make in
             make.left.top.equalTo(view).offset(offset).multipliedBy(2.0)
@@ -96,13 +131,22 @@ final class DetailViewController: UIViewController {
         stackview.snp.makeConstraints { make in
             make.left.equalTo(logoImageView.snp.right).offset(offset)
             make.right.equalToSuperview()
-            make.top.bottom.equalTo(logoImageView)
+            make.top.equalTo(logoImageView)
         }
 
         // set values
         categoryLabel.text = transaction.category.capitalized
         amountLabel.attributedText = transaction.amount.toCurrencyFormat()
         dateLabel.text = transaction.date.toDateFormat()
+    }
+
+    @objc private func switchChanged(sender: UISwitch) {
+        switch sender.isOn {
+        case true:
+            viewModel.transactions[sender.tag].isRecurring = true
+        case false:
+            viewModel.transactions[sender.tag].isRecurring = false
+        }
     }
 }
 
