@@ -17,7 +17,7 @@ class TabBarController: UITabBarController {
 
     func setupTabBar() {
         // vc 1
-        let vc1 = UINavigationController(rootViewController: TableViewController())
+        let vc1 = UINavigationController(rootViewController: TransactionTableViewController())
         vc1.tabBarItem = UITabBarItem(title: "TableView", image: nil, tag: 0)
 
         // vc 2

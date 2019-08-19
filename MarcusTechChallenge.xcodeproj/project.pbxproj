@@ -14,7 +14,7 @@
 		686619DA20923C7100934EA0 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 686619D920923C7100934EA0 /* Data.swift */; };
 		6889B7F4208FD9680097A8DC /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B7F3208FD9680097A8DC /* Main.swift */; };
 		6889B7FF208FD9680097A8DC /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B7FE208FD9680097A8DC /* Main.swift */; };
-		6889B819208FDA380097A8DC /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B80D208FDA380097A8DC /* TableViewController.swift */; };
+		6889B819208FDA380097A8DC /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B80D208FDA380097A8DC /* TransactionTableViewController.swift */; };
 		6889B81A208FDA380097A8DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B80F208FDA380097A8DC /* AppDelegate.swift */; };
 		6889B81B208FDA380097A8DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6889B811208FDA380097A8DC /* Assets.xcassets */; };
 		6889B81C208FDA380097A8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889B812208FDA380097A8DC /* LaunchScreen.storyboard */; };
@@ -28,6 +28,8 @@
 		D656BB7A230743D3005E8196 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */; };
 		D656BB8023076D64005E8196 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7F23076D64005E8196 /* Extensions.swift */; };
 		D656BB882309E05A005E8196 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB872309E05A005E8196 /* DetailViewController.swift */; };
+		D656BB8A230A16FC005E8196 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */; };
+		D656BB8C230A177B005E8196 /* TransactionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +66,7 @@
 		6889B7FA208FD9680097A8DC /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6889B7FE208FD9680097A8DC /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		6889B800208FD9680097A8DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6889B80D208FDA380097A8DC /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6889B80D208FDA380097A8DC /* TransactionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
 		6889B80F208FDA380097A8DC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6889B811208FDA380097A8DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6889B813208FDA380097A8DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		D656BB7F23076D64005E8196 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D656BB872309E05A005E8196 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewDataSource.swift; sourceTree = "<group>"; };
 		D6F031580A01383CA9B45AF2 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9EAAA56FC0623F94AC6FB62 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -187,7 +191,7 @@
 			children = (
 				D656BB6C2306FE51005E8196 /* TabBarController.swift */,
 				D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */,
-				6889B80D208FDA380097A8DC /* TableViewController.swift */,
+				6889B80D208FDA380097A8DC /* TransactionTableViewController.swift */,
 				D656BB872309E05A005E8196 /* DetailViewController.swift */,
 				D656BB7723074041005E8196 /* TransactionViewModel.swift */,
 				D656BB7B230743D8005E8196 /* Cell */,
@@ -229,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */,
+				D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */,
+				D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -474,11 +480,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D656BB882309E05A005E8196 /* DetailViewController.swift in Sources */,
+				D656BB8C230A177B005E8196 /* TransactionTableViewDataSource.swift in Sources */,
 				6889B81A208FDA380097A8DC /* AppDelegate.swift in Sources */,
 				D656BB7A230743D3005E8196 /* CustomCollectionViewCell.swift in Sources */,
-				6889B819208FDA380097A8DC /* TableViewController.swift in Sources */,
+				6889B819208FDA380097A8DC /* TransactionTableViewController.swift in Sources */,
 				6889B81F208FDA380097A8DC /* Transaction.swift in Sources */,
 				D656BB7323070045005E8196 /* TransactionCollectionViewController.swift in Sources */,
+				D656BB8A230A16FC005E8196 /* CustomTableViewCell.swift in Sources */,
 				D656BB8023076D64005E8196 /* Extensions.swift in Sources */,
 				D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */,
 				686619DA20923C7100934EA0 /* Data.swift in Sources */,

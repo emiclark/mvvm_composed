@@ -8,6 +8,10 @@
 
 import Foundation
 
-class TransactionViewModel: NSObject {
+final class TransactionViewModel: NSObject {
     var transactions = Transaction.getAll()
+
+    var transactionsCount: Int {
+        return transactions.count
+    }
 }

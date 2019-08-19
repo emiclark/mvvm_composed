@@ -16,7 +16,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
         let tabBarVC = TabBarController()
-        tabBarVC.selectedIndex = 1
+        tabBarVC.selectedIndex = 0
         window?.rootViewController = tabBarVC
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
         UINavigationBar.appearance().barTintColor = .white
