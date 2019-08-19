@@ -44,13 +44,10 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController(transaction: viewModel.transactions[indexPath.row])
-        navigationController?.pushViewController(detailViewController, animated: true)
+        let transaction = viewModel.transactions[indexPath.row]
+        let vc = viewModel.nextVC(for: transaction, vc: .tv)
+        navigationController?.pushViewController(vc, animated: true)
     }
-
-//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
 
     // MARK:- Helper functions
     @objc private func switchChanged(sender: UISwitch) {

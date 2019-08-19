@@ -32,7 +32,7 @@ final class TransactionCollectionViewController: UIViewController {
         collectionview.dataSource =  datasource
         view.backgroundColor = .yellow
         self.navigationItem.title = "All transactions"
-        datasource.navigationCtlr = self.navigationController
+        datasource.navigationController = self.navigationController
         setupViews()
     }
 

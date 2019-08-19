@@ -6,12 +6,26 @@
 //  Copyright © 2019 Marcus. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class TransactionViewModel: NSObject {
     var transactions = Transaction.getAll()
 
     var transactionsCount: Int {
         return transactions.count
+    }
+
+    enum VC {
+        case cv
+        case tv
+    }
+
+    func nextVC(for transaction: Transaction, vc: VC) -> UIViewController {
+        switch vc {
+            case .cv:
+                return DetailViewController(transaction: transaction)
+            case .tv:
+                return DetailViewController(transaction: transaction)
+        }
     }
 }

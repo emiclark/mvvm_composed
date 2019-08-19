@@ -11,7 +11,7 @@ import SDWebImage
 
 final class TransactionCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var navigationCtlr: UINavigationController? = nil
+    var navigationController: UINavigationController? = nil
     private let viewModel = TransactionViewModel()
     var reuseidentifier: String {
         return "cellId"
@@ -48,8 +48,8 @@ final class TransactionCollectionViewDataSource: NSObject, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let transaction = viewModel.transactions[indexPath.row]
-        let detailVC = DetailViewController(transaction: transaction)
-        navigationCtlr?.pushViewController(detailVC, animated: true)
+        let vc = viewModel.nextVC(for: transaction, vc: .cv)
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     @objc private func switchChanged(sender: UISwitch) {
