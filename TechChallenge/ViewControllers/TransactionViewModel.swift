@@ -20,6 +20,7 @@ final class TransactionViewModel: NSObject {
         case tv
     }
 
+    // return navigation title
     func title(for vc: VC) -> String {
         switch vc {
             case .tv:

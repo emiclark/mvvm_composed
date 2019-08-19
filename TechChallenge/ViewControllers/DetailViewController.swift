@@ -52,34 +52,13 @@ final class DetailViewController: UIViewController {
         return stackview
     }()
 
-    // recurring
-    private lazy var nonRecurringLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .darkGray
-        label.text = "Non-recurring"
-        label.font = UIFont.systemFont(ofSize: 15)
-        return label
-    }()
-
-    var recurringSwitch: UISwitch = {
-        let `switch` = UISwitch()
-        `switch`.transform = CGAffineTransform(scaleX: 0.60, y: 0.60)
-        return `switch`
-    }()
-
     private lazy var isRecurringLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
-        label.text = "Recurring"
+        label.textAlignment = .left
+        label.text = "This is a recurring expense"
         label.font = font
         return label
-    }()
-
-    private lazy var recurringStackview: UIStackView = {
-        let stackview = UIStackView(arrangedSubviews: [nonRecurringLabel, recurringSwitch, isRecurringLabel])
-        stackview.axis = .horizontal
-        stackview.distribution = .fill
-        return stackview
     }()
 
     // Initializer
@@ -115,10 +94,10 @@ final class DetailViewController: UIViewController {
 
         // add recurring switch to detailVC if recurring switch is ON
         if transaction.isRecurring {
-            view.addSubview(recurringStackview)
-            recurringStackview.snp.makeConstraints { make in
-                make.left.equalTo(logoImageView.snp.right).offset(-offset)
-                make.right.equalToSuperview()
+            view.addSubview(isRecurringLabel)
+            isRecurringLabel.snp.makeConstraints { make in
+                make.left.equalTo(stackview.snp.left)
+                make.right.equalToSuperview().offset(-offset)
                 make.top.equalTo(stackview.snp.bottom).offset(offset)
             }
         }
