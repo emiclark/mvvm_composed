@@ -148,28 +148,3 @@ class CustomTableViewCell: UITableViewCell {
             : recurringSwitch.setOn(false, animated: true)
     }
 }
-//
-//
-////
-////  CustomTableViewCell.swift
-////  TechChallenge
-////
-////  Created by Emiko Clark on 8/18/19.
-////  Copyright © 2019 Marcus. All rights reserved.
-////
-//
-//import UIKit
-//
-//class CustomTableViewCell: UITableViewCell {
-//
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//    }
-////
-////    override func setSelected(_ selected: Bool, animated: Bool) {
-////        super.setSelected(selected, animated: animated)
-////
-////        // Configure the view for the selected state
-////    }
-//
-//}

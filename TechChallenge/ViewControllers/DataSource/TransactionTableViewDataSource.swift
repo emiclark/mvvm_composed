@@ -11,7 +11,6 @@ import SDWebImage
 
 class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
 
-
     let viewModel = TransactionViewModel()
     var navigationController: UINavigationController?
     var reuseidentifier: String {
