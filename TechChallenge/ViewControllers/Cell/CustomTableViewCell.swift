@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class CustomTableViewCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
     //MARK:- Properties
     private let offset = 16
     private let fontsize: CGFloat = 15

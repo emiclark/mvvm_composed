@@ -11,16 +11,18 @@ import SDWebImage
 
 final class TransactionCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    let reuseIdentifier = "cellId"
     var navigationCtlr: UINavigationController? = nil
     private let viewModel = TransactionViewModel()
+    var reuseidentifier: String {
+        return "cellId"
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.transactions.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseidentifier, for: indexPath) as! CustomCollectionViewCell
         let transaction = viewModel.transactions[indexPath.row]
         cell.configure(with: transaction)
 

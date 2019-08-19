@@ -12,7 +12,6 @@ import SnapKit
 final class TransactionCollectionViewController: UIViewController {
 
     private let datasource = TransactionCollectionViewDataSource()
-    private let reuseIdentifier = "cellId"
     private let viewModel = TransactionViewModel()
 
     lazy var collectionview: UICollectionView = {
@@ -22,7 +21,7 @@ final class TransactionCollectionViewController: UIViewController {
         cv.isScrollEnabled = true
         cv.alwaysBounceVertical = true
         cv.showsVerticalScrollIndicator = true
-        cv.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: datasource.reuseIdentifier)
+        cv.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: datasource.reuseidentifier)
         cv.backgroundColor = .white
         return cv
     }()

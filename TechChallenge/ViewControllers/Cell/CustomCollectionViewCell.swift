@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+final class CustomCollectionViewCell: UICollectionViewCell {
     //MARK:- Properties
     private let offset = 16
     private let fontsize: CGFloat = 15

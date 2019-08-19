@@ -12,7 +12,6 @@ import SnapKit
 final class TransactionTableViewController: UIViewController {
 
     private let datasource = TransactionTableViewDataSource()
-    private let reuseIdentifier = "cellId"
     private let viewModel = TransactionViewModel()
 
     lazy var tableView: UITableView = {
@@ -20,7 +19,7 @@ final class TransactionTableViewController: UIViewController {
         tv.isScrollEnabled = true
         tv.alwaysBounceVertical = true
         tv.showsVerticalScrollIndicator = true
-        tv.register(CustomTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tv.register(CustomTableViewCell.self, forCellReuseIdentifier: datasource.reuseidentifier)
         tv.backgroundColor = .white
         return tv
     }()

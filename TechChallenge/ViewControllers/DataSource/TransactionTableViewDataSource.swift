@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
+final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     let viewModel = TransactionViewModel()
     var navigationController: UINavigationController?

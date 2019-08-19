@@ -1,28 +1,9 @@
-////
-////  DetailViewController.swift
-////  TechChallenge
-////
-////  Created by Emiko Clark on 8/18/19.
-////  Copyright © 2019 Marcus. All rights reserved.
-////
-//
-//import UIKit
-//
-//class DetailViewController: UIViewController {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//    }
-//}
-//====
 //
 //  DetailViewController.swift
 //  TechChallenge
 //
-//  Created by Emiko Clark on 7/31/19.
+//  Created by Emiko Clark on 8/18/19.
 //  Copyright © 2019 Marcus. All rights reserved.
-//
 
 import UIKit
 import SnapKit
