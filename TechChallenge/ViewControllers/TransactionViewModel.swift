@@ -13,24 +13,5 @@ final class TransactionViewModel: NSObject {
 
     var transactionsCount: Int {
         return transactions.count
-    }
-
-    enum VC {
-        case cv
-        case tv
-    }
-
-    enum CellStyle {
-        case singleLine
-        case multiLine
-    }
-
-    func nextVC(for transaction: Transaction, vc: VC) -> UIViewController {
-        switch vc {
-            case .cv:
-                return DetailViewController(transaction: transaction)
-            case .tv:
-                return DetailViewController(transaction: transaction)
-        }
-    }
+    }   
 }
