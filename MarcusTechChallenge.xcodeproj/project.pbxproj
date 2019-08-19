@@ -190,8 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				D656BB6C2306FE51005E8196 /* TabBarController.swift */,
-				D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */,
 				6889B80D208FDA380097A8DC /* TransactionTableViewController.swift */,
+				D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */,
 				D656BB872309E05A005E8196 /* DetailViewController.swift */,
 				D656BB7723074041005E8196 /* TransactionViewModel.swift */,
 				D656BB7B230743D8005E8196 /* Cell */,
@@ -232,8 +232,8 @@
 		D656BB7623073EFE005E8196 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */,
 				D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */,
+				D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -241,8 +241,8 @@
 		D656BB7B230743D8005E8196 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */,
 				D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */,
+				D656BB79230743D3005E8196 /* CustomCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

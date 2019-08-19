@@ -48,7 +48,7 @@ final class TransactionCollectionViewDataSource: NSObject, UICollectionViewDataS
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let transaction = viewModel.transactions[indexPath.row]
-        let vc = viewModel.nextVC(for: transaction, vc: .cv)
+        let vc = DetailViewController(transaction: transaction)
         navigationController?.pushViewController(vc, animated: true)
     }
 

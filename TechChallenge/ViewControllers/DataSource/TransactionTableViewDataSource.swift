@@ -28,8 +28,8 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let transaction =  viewModel.transactions[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseidentifier, for: indexPath) as! CustomTableViewCell
-        let transaction = viewModel.transactions[indexPath.row]
 
         cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
         if let logoUrlString = transaction.logoUrl {
@@ -39,13 +39,13 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
         return cell
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let transaction = viewModel.transactions[indexPath.row]
-        let vc = viewModel.nextVC(for: transaction, vc: .tv)
+        let vc = DetailViewController(transaction: transaction)
         navigationController?.pushViewController(vc, animated: true)
     }
 

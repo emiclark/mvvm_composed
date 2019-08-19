@@ -33,13 +33,4 @@ final class TransactionViewModel: NSObject {
                 return DetailViewController(transaction: transaction)
         }
     }
-
-    func getCellStyle(for transaction: Transaction, withStyle: CellStyle) -> CellStyle {
-        switch transaction.isRecurring {
-            case true:
-                return .singleLine
-            case false:
-                return .multiLine
-        }
-    }
 }

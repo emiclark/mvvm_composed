@@ -28,6 +28,8 @@ final class TransactionTableViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = datasource
         tableView.delegate = datasource
+        tableView.estimatedRowHeight = 50
+        tableView.rowHeight = UITableViewAutomaticDimension
         view.backgroundColor = .white
         navigationItem.title = "All Transactions"
         datasource.navigationController = navigationController

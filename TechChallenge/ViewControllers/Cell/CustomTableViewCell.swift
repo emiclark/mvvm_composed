@@ -131,6 +131,17 @@ final class CustomTableViewCell: UITableViewCell {
         isRecurring = transaction.isRecurring
         setSwitchIdentifier(for: transaction.id)
         configureCellWithSwitch(switchValue: transaction.isRecurring)
+
+        // display multiLine if recurring is on
+        if transaction.isRecurring == false {
+            displaySingleLine(for: transaction)
+        }
+    }
+
+    private func displaySingleLine(for transaction: Transaction) {
+        categoryLabel.isHidden = true
+        accountNameLabel.isHidden = true
+        recurringStackview.isHidden = true
     }
 
     private func setSwitchIdentifier(for id: String) {
