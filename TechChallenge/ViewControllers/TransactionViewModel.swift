@@ -6,7 +6,7 @@
 //  Copyright © 2019 Marcus. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class TransactionViewModel: NSObject {
     var transactions = Transaction.getAll()
@@ -14,4 +14,21 @@ final class TransactionViewModel: NSObject {
     var transactionsCount: Int {
         return transactions.count
     }
+
+    enum VC {
+        case cv
+        case tv
+    }
+
+    func title(for vc: VC) -> String {
+        switch vc {
+            case .tv:
+                return "All Transactions-TV"
+            case .cv:
+                return "All Transactions-CV"
+        }
+    }
 }
+
+
+
