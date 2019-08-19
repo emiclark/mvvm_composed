@@ -48,10 +48,9 @@ class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITableView
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
+//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
 
     // MARK:- Helper functions
     @objc private func switchChanged(sender: UISwitch) {

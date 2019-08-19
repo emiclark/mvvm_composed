@@ -195,8 +195,8 @@
 				D656BB872309E05A005E8196 /* DetailViewController.swift */,
 				D656BB7723074041005E8196 /* TransactionViewModel.swift */,
 				D656BB7B230743D8005E8196 /* Cell */,
-				D656BB7E23076CEF005E8196 /* Extensions */,
 				D656BB7623073EFE005E8196 /* DataSource */,
+				D656BB7E23076CEF005E8196 /* Extensions */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
