@@ -44,7 +44,7 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController(transaction: viewModel.transactions[indexPath.row])
+        let detailViewController = TransactionDetailViewController(transaction: viewModel.transactions[indexPath.row])
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 

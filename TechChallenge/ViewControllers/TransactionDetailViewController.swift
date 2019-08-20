@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  TransactionDetailViewController.swift
 //  TechChallenge
 //
 //  Created by Emiko Clark on 8/18/19.
@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SDWebImage
 
-final class DetailViewController: UIViewController {
+final class TransactionDetailViewController: UIViewController {
 
     //MARK:- Properties
     private let viewModel = TransactionViewModel()
