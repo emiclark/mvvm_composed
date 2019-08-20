@@ -25,9 +25,14 @@ final class TransactionTableViewController: UIViewController {
     }()
 
     override func viewWillAppear(_ animated: Bool) {
-        guard let indexPathRow = viewModel.indexPathRow else { return }
-        let indexPosition = IndexPath(row: indexPathRow.row, section: 0)
-        tableView.reloadRows(at: [indexPathRow], with: .automatic)
+//        if viewModel.cellNeedsUpdate == true {
+            let indexPath = IndexPath(item: viewModel.indexPathRow, section: 0)
+            if let visibleIndexPaths = tableView.indexPathsForVisibleRows?.index(of: indexPath as IndexPath) {
+                if visibleIndexPaths != NSNotFound {
+                    tableView.reloadRows(at: [indexPath], with: .fade)
+                }
+            }
+//        }
     }
 
     override func viewDidLoad() {

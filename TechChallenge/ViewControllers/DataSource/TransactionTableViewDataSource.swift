@@ -30,11 +30,10 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let transaction =  viewModel.transactions[indexPath.row]
 
-        //FIXME:- redraw single cell if recurring switch is switched on the detailVC
-        viewModel.indexPathRow?.row = indexPath.row
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseidentifier, for: indexPath) as! CustomTableViewCell
 
         cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
+
         if let logoUrlString = transaction.logoUrl {
             cell.logoImageView.sd_setImage(with: URL(string: logoUrlString), placeholderImage: UIImage(named: "placeholder.png"))
         }
@@ -48,15 +47,20 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let transaction = viewModel.transactions[indexPath.row]
+        viewModel.indexPathRow = indexPath.row
         let vc = DetailViewController(transaction: transaction)
         navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK:- Helper functions
+
+    //FIXME:- redraw single cell if recurring switch is switched on the detailVC
+
     @objc private func switchChanged(sender: UISwitch) {
         switch sender.isOn {
         case true:
             viewModel.transactions[sender.tag].isRecurring = true
+            viewModel.cellNeedsUpdate = true
         case false:
             viewModel.transactions[sender.tag].isRecurring = false
         }

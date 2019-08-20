@@ -15,6 +15,13 @@ final class TransactionViewModel: NSObject {
         return transactions.count
     }
 
-    var indexPathRow: IndexPath?
+    //FIXME:- redraw single cell
+    var indexPathRow: Int = 0
+    var cellNeedsUpdate: Bool = false
 
+    func setSwitchIdentifierAndRedrawCell(for index: Int, is value: Bool) {
+        indexPathRow = indexPathRow == 0 ? 0 : index - 1
+        transactions[indexPathRow].isRecurring = value
+        cellNeedsUpdate = value
+    }
 }

@@ -12,7 +12,7 @@ import SDWebImage
 final class DetailViewController: UIViewController {
 
     //MARK:- Properties
-    private let viewModel = TransactionViewModel()
+    var viewModel: TransactionViewModel?
     private let transaction: Transaction
     private var font = UIFont.systemFont(ofSize: 15)
     private var offset = 30
@@ -141,11 +141,12 @@ final class DetailViewController: UIViewController {
     }
 
     @objc private func switchChanged(sender: UISwitch) {
+        let index = Int(sender.tag)
         switch sender.isOn {
-        case true:
-            viewModel.transactions[sender.tag].isRecurring = true
-        case false:
-            viewModel.transactions[sender.tag].isRecurring = false
+            case true:
+                viewModel?.setSwitchIdentifierAndRedrawCell(for: index, is: true)
+            case false:
+                viewModel?.setSwitchIdentifierAndRedrawCell(for: index, is: false)
         }
     }
 }
