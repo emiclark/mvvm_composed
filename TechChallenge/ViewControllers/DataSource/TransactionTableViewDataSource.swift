@@ -11,7 +11,7 @@ import SDWebImage
 
 final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
 
-    let viewModel = TransactionViewModel()
+    private let viewModel = TransactionViewModel()
     var navigationController: UINavigationController?
     var reuseidentifier: String {
         return "cellId"
@@ -47,10 +47,6 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
         let detailViewController = DetailViewController(transaction: viewModel.transactions[indexPath.row])
         navigationController?.pushViewController(detailViewController, animated: true)
     }
-
-//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        return false
-//    }
 
     // MARK:- Helper functions
     @objc private func switchChanged(sender: UISwitch) {

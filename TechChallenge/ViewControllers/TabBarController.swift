@@ -8,14 +8,14 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
     }
 
-    func setupTabBar() {
+    private func setupTabBar() {
         // vc 1
         let vc1 = UINavigationController(rootViewController: TransactionTableViewController())
         vc1.tabBarItem = UITabBarItem(title: "TableView", image: nil, tag: 0)
