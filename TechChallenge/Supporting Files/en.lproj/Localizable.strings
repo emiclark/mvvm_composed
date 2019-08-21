@@ -1,0 +1,17 @@
+///* 
+//  Localizable.strings
+//  MarcusTechChallenge
+//
+//  Created by Emiko Clark on 8/20/19.
+//  Copyright © 2019 Marcus. All rights reserved.
+//*/
+//
+//enum localized: String {
+//    // navigation title
+//    case "navTitle_allTransactionsCV" = "All Transactions - CV";
+//    case "navTitle_allTransactionsTV" = "All Transactions - TV"
+//
+//    var localized {
+//        return self.rawValue.localized()
+//    }
+//}

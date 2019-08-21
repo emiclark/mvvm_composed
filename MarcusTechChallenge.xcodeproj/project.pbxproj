@@ -21,6 +21,7 @@
 		6889B81D208FDA380097A8DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889B814208FDA380097A8DC /* Main.storyboard */; };
 		6889B81F208FDA380097A8DC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B818208FDA380097A8DC /* Transaction.swift */; };
 		7F1AC21C7A775224D2F73637 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A494556C00007883D54243 /* Pods_UITests.framework */; };
+		D606A01B230CA2230037131D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D606A01D230CA2230037131D /* Localizable.strings */; };
 		D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB6C2306FE51005E8196 /* TabBarController.swift */; };
 		D656BB7323070045005E8196 /* TransactionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */; };
 		D656BB7523073EF8005E8196 /* TransactionCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */; };
@@ -74,6 +75,7 @@
 		6889B816208FDA380097A8DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6889B818208FDA380097A8DC /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		C9A494556C00007883D54243 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D606A01C230CA2230037131D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D656BB6C2306FE51005E8196 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = TechChallenge/ViewControllers/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewController.swift; sourceTree = "<group>"; };
 		D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -190,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				D656BB6C2306FE51005E8196 /* TabBarController.swift */,
-				D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */,
 				6889B80D208FDA380097A8DC /* TransactionTableViewController.swift */,
+				D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */,
 				D656BB872309E05A005E8196 /* TransactionDetailViewController.swift */,
 				D656BB7723074041005E8196 /* TransactionViewModel.swift */,
 				D656BB7B230743D8005E8196 /* Cell */,
@@ -217,6 +219,7 @@
 				6889B812208FDA380097A8DC /* LaunchScreen.storyboard */,
 				6889B814208FDA380097A8DC /* Main.storyboard */,
 				6889B816208FDA380097A8DC /* Info.plist */,
+				D606A01D230CA2230037131D /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6889B81D208FDA380097A8DC /* Main.storyboard in Resources */,
+				D606A01B230CA2230037131D /* Localizable.strings in Resources */,
 				686619D6209121A900934EA0 /* transaction_list.png in Resources */,
 				6889B81B208FDA380097A8DC /* Assets.xcassets in Resources */,
 				686619D5209121A900934EA0 /* transaction_list_expanded.png in Resources */,
@@ -541,6 +545,14 @@
 				6889B815208FDA380097A8DC /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D606A01D230CA2230037131D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D606A01C230CA2230037131D /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

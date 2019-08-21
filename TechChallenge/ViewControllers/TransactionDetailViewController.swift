@@ -84,6 +84,16 @@ final class TransactionDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationItem.title = transaction.name
+
+
+        let greeting:(String, String) -> String = { (time:String, name:String) -> String in
+            return "Good \(time), \(name)!"
+        }
+
+        let text = greeting("morning", "Arthur")
+        print(text)
+
+
     }
 
     // MARK:- Setup views

@@ -29,7 +29,7 @@ final class TransactionTableViewController: UIViewController {
         tableView.dataSource = datasource
         tableView.delegate = datasource
         view.backgroundColor = .white
-        self.navigationItem.title = viewModel.title(for: .tv)
+        self.navigationItem.title = "All_Transactions_TV".localized()
         datasource.navigationController = navigationController
         setupViews()
     }
