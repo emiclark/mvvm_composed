@@ -36,8 +36,16 @@ final class TransactionTableViewController: UIViewController {
 
     private func setupViews() {
         view.addSubview(tableView)
+
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin)
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+                make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin)
+                make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
+            } else {
+                make.edges.equalToSuperview()
+            }
         }
     }
 }

@@ -235,8 +235,8 @@
 		D656BB7623073EFE005E8196 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */,
 				D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */,
+				D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";

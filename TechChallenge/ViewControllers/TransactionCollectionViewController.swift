@@ -30,7 +30,7 @@ final class TransactionCollectionViewController: UIViewController {
         super.viewDidLoad()
         collectionview.delegate = datasource
         collectionview.dataSource =  datasource
-        view.backgroundColor = .yellow
+        view.backgroundColor = .white
         self.navigationItem.title = "navTitle_allTransactionsCV".localized()
         datasource.navigationCtlr = self.navigationController
         setupViews()
@@ -39,7 +39,14 @@ final class TransactionCollectionViewController: UIViewController {
     private func setupViews() {
         view.addSubview(collectionview)
         collectionview.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin)
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
+                make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin)
+                make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
+            } else {
+                make.edges.equalToSuperview()
+            }
         }
     }
 }
