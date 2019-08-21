@@ -31,7 +31,7 @@ final class TransactionCollectionViewController: UIViewController {
         collectionview.delegate = datasource
         collectionview.dataSource =  datasource
         view.backgroundColor = .yellow
-        self.navigationItem.title = "All_Transactions_CV".localized()
+        self.navigationItem.title = "navTitle_allTransactionsCV".localized()
         datasource.navigationCtlr = self.navigationController
         setupViews()
     }
