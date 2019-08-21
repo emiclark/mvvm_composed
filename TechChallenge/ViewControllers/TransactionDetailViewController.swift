@@ -94,12 +94,7 @@ final class TransactionDetailViewController: UIViewController {
 
         // add recurring switch to detailVC if recurring switch is ON
         if transaction.isRecurring {
-            view.addSubview(isRecurringLabel)
-            isRecurringLabel.snp.makeConstraints { make in
-                make.left.equalTo(stackview.snp.left)
-                make.right.equalToSuperview().offset(-offset)
-                make.top.equalTo(stackview.snp.bottom).offset(offset)
-            }
+            addRecurringStackView()
         }
 
         // add constraints
@@ -122,6 +117,15 @@ final class TransactionDetailViewController: UIViewController {
         categoryLabel.text = transaction.category.capitalized
         amountLabel.attributedText = transaction.amount.toCurrencyFormat()
         dateLabel.text = transaction.date.toDateFormat()
+    }
+
+    func addRecurringStackView() {
+        view.addSubview(isRecurringLabel)
+        isRecurringLabel.snp.makeConstraints { make in
+            make.left.equalTo(stackview.snp.left)
+            make.right.equalToSuperview().offset(-offset)
+            make.top.equalTo(stackview.snp.bottom).offset(offset)
+        }
     }
 }
 
