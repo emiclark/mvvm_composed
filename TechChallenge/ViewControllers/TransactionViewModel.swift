@@ -14,21 +14,6 @@ final class TransactionViewModel: NSObject {
     var transactionsCount: Int {
         return transactions.count
     }
-
-    enum VC {
-        case cv
-        case tv
-    }
-
-    // return navigation title
-    func title(for vc: VC) -> String {
-        switch vc {
-            case .tv:
-                return "All Transactions-TV"
-            case .cv:
-                return "All Transactions-CV"
-        }
-    }
 }
 
 
