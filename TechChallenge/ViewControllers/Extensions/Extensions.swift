@@ -18,12 +18,24 @@ extension Date {
 }
 
 extension Double {
-    func toCurrencyFormat() -> NSAttributedString {
-        let str = String(format: "%.2f", self)
+    func toCurrencyFormat(isSameBaseline: Bool) -> NSAttributedString {
+        let str = numberFormatter()
         let currency = self < 0 ? "-$" + str : "$" + str
         let attString: NSMutableAttributedString = NSMutableAttributedString(string: currency)
-        attString.setAttributes([.baselineOffset: 5], range: NSRange(location: currency.count - 2, length:2))
+
+        // make cents upperscript
+        if isSameBaseline == false {
+            attString.setAttributes([.baselineOffset: 5], range: NSRange(location: currency.count - 2, length:2))
+        }
         return attString
+    }
+
+    func numberFormatter() -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.locale = NSLocale(localeIdentifier: "en_US") as Locale
+        return formatter.string(from: NSNumber(value: self))!
     }
 }
 

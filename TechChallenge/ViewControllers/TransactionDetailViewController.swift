@@ -52,11 +52,11 @@ final class TransactionDetailViewController: UIViewController {
         return stackview
     }()
 
-    private lazy var isRecurringLabel: UILabel = {
+    private lazy var sumLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
         label.textAlignment = .left
-        label.text = "This is a recurring expense"
+        label.numberOfLines = 0
         label.font = font
         return label
     }()
@@ -95,6 +95,7 @@ final class TransactionDetailViewController: UIViewController {
         // add recurring switch to detailVC if recurring switch is ON
         if transaction.isRecurring {
             addRecurringStackView()
+            sumLabel.text = viewModel.sumAmount()
         }
 
         // add constraints
@@ -115,13 +116,13 @@ final class TransactionDetailViewController: UIViewController {
 
         // set values
         categoryLabel.text = transaction.category.capitalized
-        amountLabel.attributedText = transaction.amount.toCurrencyFormat()
+        amountLabel.attributedText = transaction.amount.toCurrencyFormat(isSameBaseline: false)
         dateLabel.text = transaction.date.toDateFormat()
     }
 
     func addRecurringStackView() {
-        view.addSubview(isRecurringLabel)
-        isRecurringLabel.snp.makeConstraints { make in
+        view.addSubview(sumLabel)
+        sumLabel.snp.makeConstraints { make in
             make.left.equalTo(stackview.snp.left)
             make.right.equalToSuperview().offset(-offset)
             make.top.equalTo(stackview.snp.bottom).offset(offset)

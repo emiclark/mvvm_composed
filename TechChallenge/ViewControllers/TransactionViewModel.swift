@@ -14,6 +14,23 @@ final class TransactionViewModel: NSObject {
     var transactionsCount: Int {
         return transactions.count
     }
+
+    var amountSum: Double {
+        get {
+            var sum: Double = 1.0
+            for transaction in transactions {
+                sum += transaction.amount
+            }
+            print(sum, index)
+            return sum > 0.0 ? sum : 0.0
+        }
+    }
+
+    func sumAmount() -> String {
+        let amount = amountSum.toCurrencyFormat(isSameBaseline: true)
+        let labelText = String(format: "Total amount for all transactions is %@".localized(), amount.string)
+        return labelText
+    }
 }
 
 

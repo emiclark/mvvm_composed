@@ -1,4 +1,13 @@
+// navigation titles
 "navTitle_allTransactionsCV" = "All Transactions";
 "navTitle_allTransactionsTV" = "All Transactions";
+
+// tab bar titles
 "tabBarTitle_TableView" = "TableView ";
 "tabBarTitle_CollectionView" = "CollectionView ";
+
+// detailVC labels
+"detailLabel_is_recurring_expense" = "This is a recurring expense";
+"Total amount for all transactions is %@" = "Total amount for all transactions is %@";
+
+

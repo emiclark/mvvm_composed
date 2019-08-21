@@ -122,7 +122,7 @@ final class CustomTableViewCell: UITableViewCell {
     }
 
     func configure(with transaction: Transaction) {
-        amountLabel.attributedText = transaction.amount.toCurrencyFormat()
+        amountLabel.attributedText = transaction.amount.toCurrencyFormat(isSameBaseline: false)
         categoryLabel.text = transaction.category.capitalized
         nameLabel.text = transaction.name
         accountNameLabel.text = transaction.accountName
