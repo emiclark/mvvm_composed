@@ -19,16 +19,6 @@ final class TransactionViewModel: NSObject {
         case cv
         case tv
     }
-
-    // return navigation title
-    func title(for vc: VC) -> String {
-        switch vc {
-            case .tv:
-                return "All Transactions-TV"
-            case .cv:
-                return "All Transactions-CV"
-        }
-    }
 }
 
 
