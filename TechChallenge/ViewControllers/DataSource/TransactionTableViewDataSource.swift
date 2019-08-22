@@ -11,7 +11,7 @@ import SDWebImage
 
 final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITableViewDataSource {
 
-    let viewModel = TransactionViewModel()
+    var viewModel: TransactionViewModel?
     var navigationController: UINavigationController?
     var reuseidentifier: String {
         return "cellId"
@@ -20,6 +20,7 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     // MARK: - Table view data source
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else { return 0}
         return viewModel.transactionsCount
     }
 
@@ -28,16 +29,26 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let transaction =  viewModel.transactions[indexPath.row]
 
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseidentifier, for: indexPath) as! CustomTableViewCell
 
+        // switch state changed
         cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
+
+        // load image
+        guard let viewModel = viewModel else { return cell}
+        let transaction = viewModel.transactions[indexPath.row]
 
         if let logoUrlString = transaction.logoUrl {
             cell.logoImageView.sd_setImage(with: URL(string: logoUrlString), placeholderImage: UIImage(named: "placeholder.png"))
         }
         cell.configure(with: transaction)
+
+        // if isRecurring = true, then draw single line cell, and force redraw cell
+        if transaction.isRecurring {
+            viewModel.indexPath = indexPath
+            viewModel.cellNeedsUpdate = true
+        }
         return cell
     }
 
@@ -46,9 +57,11 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let transaction = viewModel.transactions[indexPath.row]
-        viewModel.indexPathRow = indexPath.row
+        guard let transaction = viewModel?.transactions[indexPath.row],
+            let viewModel = viewModel else { return }
+        viewModel.indexPath = indexPath
         let vc = DetailViewController(transaction: transaction)
+        vc.viewModel = viewModel
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -59,10 +72,10 @@ final class TransactionTableViewDataSource: NSObject, UITableViewDelegate, UITab
     @objc private func switchChanged(sender: UISwitch) {
         switch sender.isOn {
         case true:
-            viewModel.transactions[sender.tag].isRecurring = true
-            viewModel.cellNeedsUpdate = true
+            viewModel?.transactions[sender.tag].isRecurring = true
+            viewModel?.cellNeedsUpdate = true
         case false:
-            viewModel.transactions[sender.tag].isRecurring = false
+            viewModel?.transactions[sender.tag].isRecurring = false
         }
     }
 }

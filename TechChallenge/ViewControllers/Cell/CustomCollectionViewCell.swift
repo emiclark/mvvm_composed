@@ -144,6 +144,13 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         isRecurring = transaction.isRecurring
         setSwitchIdentifier(for: transaction.id)
         configureCellWithSwitch(switchValue: transaction.isRecurring)
+
+        if !transaction.isRecurring {
+            accountNameLabel.isHidden = true
+            nonRecurringLabel.isHidden = true
+            isRecurringLabel.isHidden = true
+            recurringSwitch.isHidden = true
+        }
     }
 
     //MARK:- Helper functions

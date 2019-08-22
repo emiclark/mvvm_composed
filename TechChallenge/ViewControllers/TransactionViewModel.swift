@@ -16,12 +16,12 @@ final class TransactionViewModel: NSObject {
     }
 
     //FIXME:- redraw single cell
-    var indexPathRow: Int = 0
+    var indexPath: IndexPath = [-1,0]
     var cellNeedsUpdate: Bool = false
 
-    func setSwitchIdentifierAndRedrawCell(for index: Int, is value: Bool) {
-        indexPathRow = indexPathRow == 0 ? 0 : index - 1
-        transactions[indexPathRow].isRecurring = value
-        cellNeedsUpdate = value
-    }
+//    func needsToRedrawCell(for index: Int, is value: Bool) {
+//        indexPathRow = indexPathRow == 0 ? 0 : index - 1
+//        transactions[indexPathRow].isRecurring = value
+//        cellNeedsUpdate = value
+//    }
 }

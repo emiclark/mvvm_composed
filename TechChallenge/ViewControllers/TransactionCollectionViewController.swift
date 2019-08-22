@@ -12,7 +12,7 @@ import SnapKit
 final class TransactionCollectionViewController: UIViewController {
 
     private let datasource = TransactionCollectionViewDataSource()
-    private let viewModel = TransactionViewModel()
+    private var viewModel = TransactionViewModel()
 
     lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

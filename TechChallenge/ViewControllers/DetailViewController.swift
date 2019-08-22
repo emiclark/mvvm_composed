@@ -10,6 +10,8 @@ import SnapKit
 import SDWebImage
 
 final class DetailViewController: UIViewController {
+    var indexPath: IndexPath = [0,0]
+//    var cellNeedsUpdate: Bool = false
 
     //MARK:- Properties
     var viewModel: TransactionViewModel?
@@ -141,13 +143,12 @@ final class DetailViewController: UIViewController {
     }
 
     @objc private func switchChanged(sender: UISwitch) {
-        let index = Int(sender.tag)
-        switch sender.isOn {
-            case true:
-                viewModel?.setSwitchIdentifierAndRedrawCell(for: index, is: true)
-            case false:
-                viewModel?.setSwitchIdentifierAndRedrawCell(for: index, is: false)
-        }
+        guard let viewModel = viewModel else { return }
+        let newValue = viewModel.transactions[viewModel.indexPath.row].isRecurring ? false : true
+        viewModel.transactions[viewModel.indexPath.row].isRecurring = newValue
+        viewModel.cellNeedsUpdate = newValue
+
+        print(viewModel.indexPath, newValue,  viewModel.transactions[viewModel.indexPath.row].isRecurring as Any, viewModel.cellNeedsUpdate as Any)
     }
 }
 

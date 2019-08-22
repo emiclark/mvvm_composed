@@ -25,14 +25,17 @@ final class TransactionTableViewController: UIViewController {
     }()
 
     override func viewWillAppear(_ animated: Bool) {
-//        if viewModel.cellNeedsUpdate == true {
-            let indexPath = IndexPath(item: viewModel.indexPathRow, section: 0)
+        if viewModel.cellNeedsUpdate {
+            let indexPath = viewModel.indexPath
+            print("redraw:: \(indexPath)")
             if let visibleIndexPaths = tableView.indexPathsForVisibleRows?.index(of: indexPath as IndexPath) {
                 if visibleIndexPaths != NSNotFound {
                     tableView.reloadRows(at: [indexPath], with: .fade)
                 }
             }
-//        }
+            view.layoutIfNeeded()
+            view.layoutSubviews()
+        }
     }
 
     override func viewDidLoad() {
@@ -44,6 +47,7 @@ final class TransactionTableViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "All Transactions"
         datasource.navigationController = navigationController
+        datasource.viewModel = viewModel
         setupViews()
     }
 
