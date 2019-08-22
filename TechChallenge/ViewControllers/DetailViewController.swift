@@ -144,11 +144,15 @@ final class DetailViewController: UIViewController {
 
     @objc private func switchChanged(sender: UISwitch) {
         guard let viewModel = viewModel else { return }
-        let newValue = viewModel.transactions[viewModel.indexPath.row].isRecurring ? false : true
-        viewModel.transactions[viewModel.indexPath.row].isRecurring = newValue
-        viewModel.cellNeedsUpdate = newValue
 
-        print(viewModel.indexPath, newValue,  viewModel.transactions[viewModel.indexPath.row].isRecurring as Any, viewModel.cellNeedsUpdate as Any)
+        if viewModel.transactions[viewModel.indexPath.row].isRecurring == true {
+            viewModel.transactions[viewModel.indexPath.row].isRecurring = false
+        } else {
+            viewModel.transactions[viewModel.indexPath.row].isRecurring = true
+        }
+
+        viewModel.cellNeedsUpdate = true
+        print(viewModel.indexPath,  viewModel.transactions[viewModel.indexPath.row].isRecurring as Any)
     }
 }
 
