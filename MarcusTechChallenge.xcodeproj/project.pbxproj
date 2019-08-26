@@ -30,6 +30,8 @@
 		D656BB882309E05A005E8196 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB872309E05A005E8196 /* DetailViewController.swift */; };
 		D656BB8A230A16FC005E8196 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */; };
 		D656BB8C230A177B005E8196 /* TransactionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */; };
+		D660882F2312E15A00CA4B68 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660882E2312E15A00CA4B68 /* RootViewController.swift */; };
+		D6608831231402A300CA4B68 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6608830231402A300CA4B68 /* MyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		D656BB872309E05A005E8196 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewDataSource.swift; sourceTree = "<group>"; };
+		D660882E2312E15A00CA4B68 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D6608830231402A300CA4B68 /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		D6F031580A01383CA9B45AF2 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9EAAA56FC0623F94AC6FB62 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,6 +193,7 @@
 		6889B80C208FDA380097A8DC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D6608830231402A300CA4B68 /* MyViewController.swift */,
 				D656BB6C2306FE51005E8196 /* TabBarController.swift */,
 				6889B80D208FDA380097A8DC /* TransactionTableViewController.swift */,
 				D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */,
@@ -196,6 +201,7 @@
 				D656BB7723074041005E8196 /* TransactionViewModel.swift */,
 				D656BB7B230743D8005E8196 /* Cell */,
 				D656BB7623073EFE005E8196 /* DataSource */,
+				D660882D2312E11400CA4B68 /* RootViewController */,
 				D656BB7E23076CEF005E8196 /* Extensions */,
 			);
 			path = ViewControllers;
@@ -253,6 +259,14 @@
 				D656BB7F23076D64005E8196 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D660882D2312E11400CA4B68 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D660882E2312E15A00CA4B68 /* RootViewController.swift */,
+			);
+			path = RootViewController;
 			sourceTree = "<group>";
 		};
 		FEB095B757FDB97599DAD9F5 /* Pods */ = {
@@ -489,8 +503,10 @@
 				D656BB8A230A16FC005E8196 /* CustomTableViewCell.swift in Sources */,
 				D656BB8023076D64005E8196 /* Extensions.swift in Sources */,
 				D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */,
+				D660882F2312E15A00CA4B68 /* RootViewController.swift in Sources */,
 				686619DA20923C7100934EA0 /* Data.swift in Sources */,
 				D656BB7523073EF8005E8196 /* TransactionCollectionViewDataSource.swift in Sources */,
+				D6608831231402A300CA4B68 /* MyViewController.swift in Sources */,
 				D656BB7823074041005E8196 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

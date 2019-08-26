@@ -24,6 +24,11 @@ class TabBarController: UITabBarController {
         let cv = TransactionCollectionViewController()
         let vc2 = UINavigationController(rootViewController: cv)
         vc2.tabBarItem = UITabBarItem(title: "CollectionView", image: nil, tag: 1)
-        viewControllers = [vc1, vc2]
+
+        // vc 3
+        let vc = MyViewController()
+        let vc3 = UINavigationController(rootViewController: vc)
+        vc3.tabBarItem = UITabBarItem(title: "StackView", image: nil, tag: 2)
+        viewControllers = [vc1, vc2, vc3]
     }
 }
