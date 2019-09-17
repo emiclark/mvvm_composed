@@ -6,15 +6,26 @@
 //  Copyright © 2019 Marcus. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Xcore
 
 class FeedViewController: XCComposedCollectionViewController {
+
     let feedViewModel = FeedViewModel()
 
-    open override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.backgroundColor = .white
         self.title = "navTitle_composed_cv".localized()
-        collectionView.backgroundColor = .yellow
+        layout = .init(XCCollectionViewTileLayout().apply {
+            $0.numberOfColumns = 1
+        })
+    }
+
+    override func dataSources(for collectionView: UICollectionView) -> [XCCollectionViewDataSource] {
+        let feedDatasource = FeedDataSource(collectionView: collectionView)
+        var sources = [XCCollectionViewDataSource]()
+        sources.append(feedDatasource)
+        return sources
     }
 }

@@ -21,10 +21,5 @@ class FeedViewModel: NSObject {
         return transactions.first!
     }
 
-    var transactionTile: [Int: Transaction] {
-        let trTile = [0: transaction]
-        return trTile
-    }
-
     let reuseIdentifier = "myCell"
 }
