@@ -21,19 +21,18 @@ class FeedDataSource: XCCollectionViewDataSource {
         globalSection = 0
     }
 
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return feedViewModel.transactions.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(for: indexPath.with(globalSection)) as CustomCollectionViewCell
 
-        let transaction = feedViewModel.transactions[0]
+        let transaction = feedViewModel.transactions[indexPath.row]
         cell.configure(with: transaction)
         return cell
     }

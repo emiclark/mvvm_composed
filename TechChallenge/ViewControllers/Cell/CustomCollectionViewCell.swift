@@ -11,7 +11,7 @@ import SnapKit
 
 final class CustomCollectionViewCell: UICollectionViewCell {
     //MARK:- Properties
-    private let offset = 16
+    private let offset = 10
     private let fontsize: CGFloat = 15
     private var isRecurring: Bool = false
     private let imageHeight = 20

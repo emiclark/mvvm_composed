@@ -17,9 +17,9 @@ class FeedViewModel: NSObject {
         return transactions.count
     }
 
-    var transaction: Transaction {
-        return transactions.first!
-    }
+//    var transaction: Transaction {
+//        return transactions.first!
+//    }
 
-    let reuseIdentifier = "myCell"
+//    let reuseIdentifier = "myCell"
 }
