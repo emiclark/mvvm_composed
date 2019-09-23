@@ -1,0 +1,6 @@
+framework module Xcore {
+  umbrella header "Xcore-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,20 +3,32 @@ PODS:
     - SDWebImage/Core (= 4.4.7)
   - SDWebImage/Core (4.4.7)
   - SnapKit (4.2.0)
+  - Xcore (1.0.0):
+    - SDWebImage (~> 4.0)
 
 DEPENDENCIES:
-  - SDWebImage (~> 4.0)
   - SnapKit (~> 4.0)
+  - Xcore (from `https://github.com/zmian/xcore.swift`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - SDWebImage
     - SnapKit
 
+EXTERNAL SOURCES:
+  Xcore:
+    :git: https://github.com/zmian/xcore.swift
+
+CHECKOUT OPTIONS:
+  Xcore:
+    :commit: 230e91a71e270e62932fc4175e0ee83db13d016a
+    :git: https://github.com/zmian/xcore.swift
+
 SPEC CHECKSUMS:
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Xcore: c0346a267aae0230adbb0ad26ecf0cb70956be60
 
-PODFILE CHECKSUM: 2754239d38ad3bd7b172d805667d2af402f20f22
+PODFILE CHECKSUM: 0d5e9dc3d03ed27a170a033a6bbda90cd2b4af67
 
 COCOAPODS: 1.7.5

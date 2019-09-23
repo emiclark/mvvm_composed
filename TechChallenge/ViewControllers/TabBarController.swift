@@ -16,14 +16,19 @@ final class TabBarController: UITabBarController {
     }
 
     func setupTabBar() {
-        // vc 1
-        let vc1 = UINavigationController(rootViewController: TransactionTableViewController())
-        vc1.tabBarItem = UITabBarItem(title: "tabBarTitle_TableView".localized(), image: nil, tag: 0)
 
-        // vc 2
-        let cv = TransactionCollectionViewController()
-        let vc2 = UINavigationController(rootViewController: cv)
-        vc2.tabBarItem = UITabBarItem(title: "tabBarTitle_CollectionView".localized(), image: nil, tag: 1)
-        viewControllers = [vc1, vc2]
+        // tab 1
+        let tab1 = UINavigationController(rootViewController: FeedViewController())
+        tab1.tabBarItem = UITabBarItem(title: "tabBarTitle_ComposedCV".localized(), image: nil, tag: 0)
+
+        // tab 2
+        let tab2 = UINavigationController(rootViewController: TransactionTableViewController())
+        tab2.tabBarItem = UITabBarItem(title: "tabBarTitle_TableView".localized(), image: nil, tag: 1)
+
+        // tab 3
+        let tab3 = UINavigationController(rootViewController: TransactionCollectionViewController())
+        tab3.tabBarItem = UITabBarItem(title: "tabBarTitle_CollectionView".localized(), image: nil, tag: 2)
+
+        viewControllers = [tab1, tab2, tab3]
     }
 }
