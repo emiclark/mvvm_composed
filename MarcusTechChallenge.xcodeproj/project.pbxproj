@@ -19,7 +19,6 @@
 		6889B81C208FDA380097A8DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889B812208FDA380097A8DC /* LaunchScreen.storyboard */; };
 		6889B81D208FDA380097A8DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889B814208FDA380097A8DC /* Main.storyboard */; };
 		6889B81F208FDA380097A8DC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B818208FDA380097A8DC /* Transaction.swift */; };
-		D606A01B230CA2230037131D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D606A01D230CA2230037131D /* Localizable.strings */; };
 		D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB6C2306FE51005E8196 /* TabBarController.swift */; };
 		D656BB7323070045005E8196 /* TransactionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */; };
 		D656BB7523073EF8005E8196 /* TransactionCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */; };
@@ -30,9 +29,9 @@
 		D656BB8A230A16FC005E8196 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */; };
 		D656BB8C230A177B005E8196 /* TransactionTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */; };
 		D69B50D7233055D40092AE3F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69B50D6233055D40092AE3F /* FeedViewController.swift */; };
-		D6EB5D1C232868A300B720EA /* TransactionComposedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB5D1B232868A300B720EA /* TransactionComposedCollectionViewController.swift */; };
 		D6EB5D20232D372600B720EA /* FeedDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB5D1F232D372600B720EA /* FeedDataSource.swift */; };
 		D6EB5D22232D383F00B720EA /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EB5D21232D383F00B720EA /* FeedViewModel.swift */; };
+		D6FAF64A2339595B00AC75F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D6FAF6492339595B00AC75F8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +72,6 @@
 		6889B815208FDA380097A8DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6889B816208FDA380097A8DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6889B818208FDA380097A8DC /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		D606A01C230CA2230037131D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D656BB6C2306FE51005E8196 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = TechChallenge/ViewControllers/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewController.swift; sourceTree = "<group>"; };
 		D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -84,9 +82,9 @@
 		D656BB89230A16FC005E8196 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D656BB8B230A177B005E8196 /* TransactionTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewDataSource.swift; sourceTree = "<group>"; };
 		D69B50D6233055D40092AE3F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		D6EB5D1B232868A300B720EA /* TransactionComposedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionComposedCollectionViewController.swift; sourceTree = "<group>"; };
 		D6EB5D1F232D372600B720EA /* FeedDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataSource.swift; sourceTree = "<group>"; };
 		D6EB5D21232D383F00B720EA /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		D6FAF6492339595B00AC75F8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../../../../../../Desktop/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +155,7 @@
 		6889B7DD208FD9650097A8DC /* TechChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				D6FAF6442339296700AC75F8 /* Constants */,
 				6889B80E208FDA380097A8DC /* Application */,
 				6889B80C208FDA380097A8DC /* ViewControllers */,
 				6889B817208FDA380097A8DC /* Models */,
@@ -209,12 +208,12 @@
 		6889B810208FDA380097A8DC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D6FAF645233948BA00AC75F8 /* Localization */,
 				686619D920923C7100934EA0 /* Data.swift */,
 				6889B811208FDA380097A8DC /* Assets.xcassets */,
 				6889B812208FDA380097A8DC /* LaunchScreen.storyboard */,
 				6889B814208FDA380097A8DC /* Main.storyboard */,
 				6889B816208FDA380097A8DC /* Info.plist */,
-				D606A01D230CA2230037131D /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -259,7 +258,6 @@
 				D69B50D6233055D40092AE3F /* FeedViewController.swift */,
 				D6EB5D1F232D372600B720EA /* FeedDataSource.swift */,
 				D6EB5D21232D383F00B720EA /* FeedViewModel.swift */,
-				D6EB5D1B232868A300B720EA /* TransactionComposedCollectionViewController.swift */,
 			);
 			path = Composed;
 			sourceTree = "<group>";
@@ -272,6 +270,21 @@
 				D656BB872309E05A005E8196 /* TransactionDetailViewController.swift */,
 			);
 			path = Transaction;
+			sourceTree = "<group>";
+		};
+		D6FAF6442339296700AC75F8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D6FAF645233948BA00AC75F8 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D6FAF6492339595B00AC75F8 /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		FEB095B757FDB97599DAD9F5 /* Pods */ = {
@@ -390,7 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6889B81D208FDA380097A8DC /* Main.storyboard in Resources */,
-				D606A01B230CA2230037131D /* Localizable.strings in Resources */,
+				D6FAF64A2339595B00AC75F8 /* Localizable.strings in Resources */,
 				686619D6209121A900934EA0 /* transaction_list.png in Resources */,
 				6889B81B208FDA380097A8DC /* Assets.xcassets in Resources */,
 				686619D5209121A900934EA0 /* transaction_list_expanded.png in Resources */,
@@ -471,7 +484,6 @@
 				D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */,
 				686619DA20923C7100934EA0 /* Data.swift in Sources */,
 				D69B50D7233055D40092AE3F /* FeedViewController.swift in Sources */,
-				D6EB5D1C232868A300B720EA /* TransactionComposedCollectionViewController.swift in Sources */,
 				D656BB7523073EF8005E8196 /* TransactionCollectionViewDataSource.swift in Sources */,
 				D656BB7823074041005E8196 /* TransactionViewModel.swift in Sources */,
 			);
@@ -523,14 +535,6 @@
 				6889B815208FDA380097A8DC /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D606A01D230CA2230037131D /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D606A01C230CA2230037131D /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
