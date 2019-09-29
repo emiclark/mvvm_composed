@@ -6,7 +6,6 @@
 //  Copyright © 2019 Marcus. All rights reserved.
 //
 
-import UIKit
 import Xcore
 
 class FeedDataSource: XCCollectionViewDataSource {

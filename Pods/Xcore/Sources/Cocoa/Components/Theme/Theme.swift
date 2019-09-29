@@ -103,6 +103,12 @@ public struct Theme: Equatable {
     }
 }
 
+extension Theme {
+    public var chrome: Chrome.Style {
+        return isDark ? .color(backgroundColor) : .blurred
+    }
+}
+
 // MARK: - Default
 
 extension Theme {
@@ -118,7 +124,7 @@ extension Theme {
         separatorColor: .lightGray,
         toggleColor: .systemTint,
         linkColor: .systemTint,
-        textColor: .darkText,
+        textColor: .black,
         textColorSecondary: .lightGray,
         backgroundColor: .white,
         buttonTextColor: .systemTint,
@@ -146,4 +152,13 @@ extension Theme {
         buttonBackgroundColorPill: .systemTint,
         statusBarStyle: .lightContent
     )
+}
+
+// MARK: - UIView
+
+extension UIView {
+    /// Called when the app theme property changes.
+    ///
+    /// In your implementation, refresh the view rendering as needed.
+    @objc open func themeDidChange() { }
 }

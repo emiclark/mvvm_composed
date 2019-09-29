@@ -105,7 +105,7 @@ final class TransactionDetailViewController: UIViewController {
         }
 
         if let logoUrlString = transaction.logoUrl {
-            logoImageView.sd_setImage(with: URL(string: logoUrlString), placeholderImage: UIImage(named: "placeholder.png"))
+            logoImageView.sd_setImage(with: URL(string: logoUrlString), placeholderImage: UIImage(named: "placeholder.pdf"))
         }
 
         stackview.snp.makeConstraints { make in

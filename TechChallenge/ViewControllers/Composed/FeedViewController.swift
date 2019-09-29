@@ -6,7 +6,6 @@
 //  Copyright © 2019 Marcus. All rights reserved.
 //
 
-import UIKit
 import Xcore
 
 class FeedViewController: XCComposedCollectionViewController {
@@ -16,7 +15,6 @@ class FeedViewController: XCComposedCollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        self.title = "navTitle_composed_cv".localized()
         layout = .init(XCCollectionViewTileLayout().apply {
             $0.numberOfColumns = 1
         })

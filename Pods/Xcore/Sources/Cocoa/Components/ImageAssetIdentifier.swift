@@ -106,9 +106,9 @@ extension ControlTargetActionBlockRepresentable where Self: UIButton {
     }
 }
 
-/// A convenience function to get resource name from `.xcassets`.
-public func r(_ assetIdentifier: ImageAssetIdentifier) -> String {
-    return assetIdentifier.rawValue
+/// A convenience function to get resource.
+public func r(_ assetIdentifier: ImageAssetIdentifier) -> ImageAssetIdentifier {
+    return assetIdentifier
 }
 
 // MARK: - Xcore Buit-in Assets
@@ -128,11 +128,6 @@ extension ImageAssetIdentifier {
     static var caretDirectionDown: ImageAssetIdentifier { return propertyName() }
     static var caretDirectionBack: ImageAssetIdentifier { return propertyName() }
     static var caretDirectionForward: ImageAssetIdentifier { return propertyName() }
-
-    // MARK: Checkmarks
-    public static var checkmarkIcon: ImageAssetIdentifier { return propertyName() }
-    public static var checkmarkIconFilled: ImageAssetIdentifier { return propertyName() }
-    public static var checkmarkIconUnfilled: ImageAssetIdentifier { return propertyName() }
 
     // MARK: Shared UI Elements
     public static var closeIcon: ImageAssetIdentifier { return propertyName() }
@@ -163,5 +158,19 @@ extension ImageAssetIdentifier {
     public static var searchIcon: ImageAssetIdentifier { return propertyName() }
     public static var validationErrorIcon: ImageAssetIdentifier { return propertyName() }
 
-    public static var moreIcon: ImageAssetIdentifier = propertyName(name: "moreIcon")
+}
+
+// MARK: - Xcore Buit-in Overridable Assets
+
+extension ImageAssetIdentifier {
+    // MARK: Checkmarks
+    public static var checkmarkIcon = propertyName(name: "checkmarkIcon")
+    public static var checkmarkIconFilled = propertyName(name: "checkmarkIconFilled")
+    public static var checkmarkIconUnfilled = propertyName(name: "checkmarkIconUnfilled")
+
+    public static var moreIcon = propertyName(name: "moreIcon")
+
+    // MARK: Biometrics ID
+    public static var biometricsFaceIDIcon = propertyName(name: "biometricsFaceIDIcon")
+    public static var biometricsTouchIDIcon = propertyName(name: "biometricsTouchIDIcon")
 }

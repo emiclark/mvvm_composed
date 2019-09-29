@@ -15,11 +15,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        let tabBarVC = TabBarController()
-        tabBarVC.selectedIndex = 0
+        let tabBarVC = RootViewController()
         window?.rootViewController = tabBarVC
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
-        UINavigationBar.appearance().barTintColor = .white
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17)], for: .normal)
         window?.makeKeyAndVisible()
         return true
     }

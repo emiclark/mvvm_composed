@@ -44,6 +44,7 @@ extension MarkupText {
         public var textColor: UIColor = .black
         public var isLabelEnabled: Bool = false
         public var isTextViewEnabled: Bool = false
+        public var customElements: [MarkdownElement] = []
         fileprivate override init() {}
     }
 }
@@ -69,7 +70,7 @@ extension MarkdownParser {
                 MarkdownBackgroundColor(),
                 MarkdownCustomFont(),
                 MarkdownUnderline()
-            ]
+            ] + MarkupText.appearance.customElements
         )
         return markdownParser
     }
@@ -160,7 +161,15 @@ extension UITextView {
     /// The default value is `false`.
     public var isMarkupEnabled: Bool {
         get { return associatedObject(&AssociatedKey.isMarkupEnabled, default: MarkupText.appearance.isTextViewEnabled) }
-        set { setAssociatedObject(&AssociatedKey.isMarkupEnabled, value: newValue) }
+        set {
+            let oldValue = isMarkupEnabled
+            setAssociatedObject(&AssociatedKey.isMarkupEnabled, value: newValue)
+            // If new value is `true` and have text, trigger parsing.
+            if newValue, hasText, oldValue != newValue {
+                let existingText = text
+                text = existingText
+            }
+        }
     }
 
     private var markdownParser: MarkdownParser {

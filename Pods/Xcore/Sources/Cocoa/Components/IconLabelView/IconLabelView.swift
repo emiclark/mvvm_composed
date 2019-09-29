@@ -37,36 +37,42 @@ open class IconLabelView: XCView {
         titleLabel
     ]).apply {
         $0.isLayoutMarginsRelativeArrangement = true
-        $0.distribution = .fill
+        $0.distribution = .fillProportionally
         $0.alignment = .center
         $0.spacing = .minimumPadding / 2
+        $0.sizeChangeResistance(.required, axis: .both)
     }
 
     public lazy var imageViewContainer = UIView().apply {
         $0.backgroundColor = imageBackgroundColor
         $0.cornerRadius = imageCornerRadius
+        $0.sizeChangeResistance(.required, axis: .both)
         $0.addSubview(imageView)
     }
 
     public let imageView = UIImageView().apply {
         $0.isContentModeAutomaticallyAdjusted = true
         $0.enableSmoothScaling()
+        $0.tintColor = .appTint
+        $0.sizeChangeResistance(.required, axis: .both)
     }
 
     public let titleLabel = UILabel().apply {
         $0.font = .app(style: .body)
         $0.textAlignment = .center
-        $0.textColor = .black
+        $0.textColor = Theme.current.textColor
         $0.numberOfLines = 0
-        $0.sizeToFit()
+        $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        $0.sizeChangeResistance(.required, axis: .vertical)
     }
 
     public let subtitleLabel = UILabel().apply {
         $0.font = .app(style: .subheadline)
         $0.textAlignment = .center
-        $0.textColor = .lightGray
+        $0.textColor = Theme.current.textColorSecondary
         $0.numberOfLines = 0
-        $0.sizeToFit()
+        $0.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        $0.sizeChangeResistance(.required, axis: .vertical)
     }
 
     /// The default value is `.vertical`.
@@ -267,30 +273,6 @@ extension IconLabelView {
     }
 }
 
-// MARK: - UIAppearance Properties
-
-extension IconLabelView {
-    @objc public dynamic var titleTextColor: UIColor {
-        get { return titleLabel.textColor }
-        set { titleLabel.textColor = newValue }
-    }
-
-    @objc public dynamic var titleFont: UIFont {
-        get { return titleLabel.font }
-        set { titleLabel.font = newValue }
-    }
-
-    @objc public dynamic var subtitleTextColor: UIColor {
-        get { return subtitleLabel.textColor }
-        set { subtitleLabel.textColor = newValue }
-    }
-
-    @objc public dynamic var subtitleFont: UIFont {
-        get { return subtitleLabel.font }
-        set { subtitleLabel.font = newValue }
-    }
-}
-
 extension IconLabelView {
     private func updateAxis() {
         switch axis {
@@ -324,5 +306,29 @@ extension IconLabelView {
         }
 
         stackView.setCustomSpacing(textImageSpacing, after: firstView)
+    }
+}
+
+// MARK: - UIAppearance Properties
+
+extension IconLabelView {
+    @objc public dynamic var titleTextColor: UIColor {
+        get { return titleLabel.textColor }
+        set { titleLabel.textColor = newValue }
+    }
+
+    @objc public dynamic var titleFont: UIFont {
+        get { return titleLabel.font }
+        set { titleLabel.font = newValue }
+    }
+
+    @objc public dynamic var subtitleTextColor: UIColor {
+        get { return subtitleLabel.textColor }
+        set { subtitleLabel.textColor = newValue }
+    }
+
+    @objc public dynamic var subtitleFont: UIFont {
+        get { return subtitleLabel.font }
+        set { subtitleLabel.font = newValue }
     }
 }
