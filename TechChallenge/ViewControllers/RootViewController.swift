@@ -18,7 +18,7 @@ final class RootViewController : XCTabBarController {
 
     static var tab1: UITabBarController.TabItem {
         return .init(id: "tab1",
-                    image: "placeholder.pdf",
+                    image: "robot.pdf",
                     accessibilityLabel: "tabBarTitle_ComposedCV".localized(),
                     viewControllerType: FeedViewController.self,
                     viewController: FeedViewController())
@@ -26,7 +26,7 @@ final class RootViewController : XCTabBarController {
 
     static var tab2: UITabBarController.TabItem {
         return .init(id: "tab2",
-                     image: "placeholder.pdf",
+                     image: "happy.pdf",
                      accessibilityLabel: "tabBarTitle_CollectionView".localized(),
                      viewControllerType: TransactionCollectionViewController.self,
                      viewController: TransactionCollectionViewController())
@@ -34,7 +34,7 @@ final class RootViewController : XCTabBarController {
 
     static var tab3: UITabBarController.TabItem {
         return .init(id: "tab3",
-                     image: "placeholder.pdf",
+                     image: "blush.pdf",
                      accessibilityLabel: "tabBarTitle_TableView".localized(),
                      viewControllerType: TransactionTableViewController.self,
                      viewController: TransactionTableViewController())
