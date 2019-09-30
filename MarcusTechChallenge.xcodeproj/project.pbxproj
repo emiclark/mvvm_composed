@@ -20,6 +20,7 @@
 		6889B81D208FDA380097A8DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6889B814208FDA380097A8DC /* Main.storyboard */; };
 		6889B81F208FDA380097A8DC /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6889B818208FDA380097A8DC /* Transaction.swift */; };
 		D64C84ED2341044A00807687 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D64C84EF2341044A00807687 /* Localizable.strings */; };
+		D64C84F12342196D00807687 /* ComposedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64C84F02342196D00807687 /* ComposedCollectionViewCell.swift */; };
 		D656BB6D2306FE51005E8196 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB6C2306FE51005E8196 /* TabBarController.swift */; };
 		D656BB7323070045005E8196 /* TransactionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */; };
 		D656BB7523073EF8005E8196 /* TransactionCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */; };
@@ -74,6 +75,7 @@
 		6889B816208FDA380097A8DC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6889B818208FDA380097A8DC /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		D64C84EE2341044A00807687 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D64C84F02342196D00807687 /* ComposedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposedCollectionViewCell.swift; sourceTree = "<group>"; };
 		D656BB6C2306FE51005E8196 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = TechChallenge/ViewControllers/TabBarController.swift; sourceTree = SOURCE_ROOT; };
 		D656BB7223070045005E8196 /* TransactionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewController.swift; sourceTree = "<group>"; };
 		D656BB7423073EF8005E8196 /* TransactionCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				D69B50D6233055D40092AE3F /* FeedViewController.swift */,
 				D6EB5D1F232D372600B720EA /* FeedDataSource.swift */,
 				D6EB5D21232D383F00B720EA /* FeedViewModel.swift */,
+				D64C84F02342196D00807687 /* ComposedCollectionViewCell.swift */,
 			);
 			path = Composed;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				686619DA20923C7100934EA0 /* Data.swift in Sources */,
 				D69B50D7233055D40092AE3F /* FeedViewController.swift in Sources */,
 				D656BB7523073EF8005E8196 /* TransactionCollectionViewDataSource.swift in Sources */,
+				D64C84F12342196D00807687 /* ComposedCollectionViewCell.swift in Sources */,
 				D656BB7823074041005E8196 /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

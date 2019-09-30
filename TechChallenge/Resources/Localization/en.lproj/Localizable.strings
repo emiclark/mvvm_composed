@@ -1,6 +1,6 @@
 // navigation titles
-"navTitle_allTransactionsCV" = "All Transactions";
-"navTitle_allTransactionsTV" = "All Transactions";
+"navTitle_allTransactionsCV" = "Transactions-CV";
+"navTitle_allTransactionsTV" = "All Transactions-TV";
 "navTitle_composed_cv" = "Composed CV";
 
 // tab bar titles

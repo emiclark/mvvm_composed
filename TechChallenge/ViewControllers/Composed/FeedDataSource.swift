@@ -7,6 +7,7 @@
 //
 
 import Xcore
+import SDWebImage
 
 class FeedDataSource: XCCollectionViewDataSource {
     let feedViewModel = FeedViewModel()
@@ -29,10 +30,26 @@ class FeedDataSource: XCCollectionViewDataSource {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath.with(globalSection)) as CustomCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(for: indexPath.with(globalSection)) as ComposedCollectionViewCell
 
         let transaction = feedViewModel.transactions[indexPath.row]
         cell.configure(with: transaction)
+
+        guard let urlString = transaction.logoUrl,
+            let url = URL(string: urlString) else { return cell }
+        cell.logoImageView.sd_setImage(with: url)
+
+        cell.recurringSwitch.addTarget(self, action: #selector(switchChanged(sender:)), for: .valueChanged)
+
         return cell
+    }
+
+    @objc private func switchChanged(sender: UISwitch) {
+        switch sender.isOn {
+        case true:
+            feedViewModel.transactions[sender.tag].isRecurring = true
+        case false:
+            feedViewModel.transactions[sender.tag].isRecurring = false
+        }
     }
 }

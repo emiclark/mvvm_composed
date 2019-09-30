@@ -29,7 +29,7 @@ final class RootViewController : XCTabBarController {
                      image: "placeholder.pdf",
                      accessibilityLabel: "tabBarTitle_CollectionView".localized(),
                      viewControllerType: TransactionCollectionViewController.self,
-                     viewController: TransactionTableViewController())
+                     viewController: TransactionCollectionViewController())
     }
 
     static var tab3: UITabBarController.TabItem {
