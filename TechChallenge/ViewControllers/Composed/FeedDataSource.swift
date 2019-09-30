@@ -30,7 +30,7 @@ class FeedDataSource: XCCollectionViewDataSource {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath.with(globalSection)) as ComposedCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(for: indexPath.with(globalSection)) as CustomCollectionViewCell
 
         let transaction = feedViewModel.transactions[indexPath.row]
         cell.configure(with: transaction)

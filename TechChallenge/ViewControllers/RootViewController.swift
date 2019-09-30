@@ -18,15 +18,17 @@ final class RootViewController : XCTabBarController {
 
     static var tab1: UITabBarController.TabItem {
         return .init(id: "tab1",
-                    image: "robot.pdf",
-                    accessibilityLabel: "tabBarTitle_ComposedCV".localized(),
-                    viewControllerType: FeedViewController.self,
-                    viewController: FeedViewController())
+                     image: "robot.pdf",
+                     selectedImageRenderingMode: .alwaysOriginal,
+                     accessibilityLabel: "tabBarTitle_ComposedCV".localized(),
+                     viewControllerType: FeedViewController.self,
+                     viewController: FeedViewController())
     }
 
     static var tab2: UITabBarController.TabItem {
         return .init(id: "tab2",
                      image: "happy.pdf",
+                     selectedImageRenderingMode: .alwaysOriginal,
                      accessibilityLabel: "tabBarTitle_CollectionView".localized(),
                      viewControllerType: TransactionCollectionViewController.self,
                      viewController: TransactionCollectionViewController())
@@ -35,6 +37,7 @@ final class RootViewController : XCTabBarController {
     static var tab3: UITabBarController.TabItem {
         return .init(id: "tab3",
                      image: "blush.pdf",
+                     selectedImageRenderingMode: .alwaysOriginal,
                      accessibilityLabel: "tabBarTitle_TableView".localized(),
                      viewControllerType: TransactionTableViewController.self,
                      viewController: TransactionTableViewController())
@@ -48,5 +51,3 @@ final class RootViewController : XCTabBarController {
         tabBar.backgroundColor = .white
     }
 }
-
-
