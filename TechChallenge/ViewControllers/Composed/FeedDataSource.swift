@@ -52,4 +52,10 @@ class FeedDataSource: XCCollectionViewDataSource {
             feedViewModel.transactions[sender.tag].isRecurring = false
         }
     }
+
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = CFTransactionDetailViewController(transaction: feedViewModel.transactions[indexPath.row])
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
 }
